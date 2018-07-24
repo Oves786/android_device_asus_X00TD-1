@@ -3,6 +3,12 @@
 
 # Goodix Fingerprint
 /dev/goodix_fp                                                      u:object_r:fingerprintd_device:s0
+/data/vendor/goodix(/.*)?                                     u:object_r:fingerprint_data_file:s0
+/data/misc/goodix(/.*)?                                       u:object_r:fingerprint_data_file:s0
+
+# Shell Script
+/(vendor|system/vendor)/bin/init\.goodix\.sh    u:object_r:init_fingerprint_exec:s0
+
 
 # Keylayout
 /(vendor|system/vendor)/usr/keylayout/gpio-keys\.kl                 u:object_r:keylayout_file:s0
